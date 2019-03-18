@@ -8,7 +8,7 @@ import logger from '../lib/logger';
 const apiRouter = new Router();
 
 apiRouter.post('/location', (request, response) => {
-  let location = request.body.zip;
+  let location = request.body.location;
   debugger;
   return superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${process.env.GOOGLE_KEY}`)
     .type('application/json')
